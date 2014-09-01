@@ -501,37 +501,37 @@ $Tencent=window.$Tencent || {
 		$("#page_1").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.css({"display":"block","x":"0%","y":"0%"});
-			$("#guang").stop().animate({"margin-top":-396},800);
-			$page.find(".colorbg").stop().css({'display':'block','margin-top':45,'opacity':0})
-				.animate({'margin-top':-255,'opacity':1},600);
+			$("#guang").stop().animate({"margin-top":-476},800);
+			$page.find(".colorbg").stop().css({'display':'block','margin-top':-35,'opacity':0})
+				.animate({'margin-top':-335,'opacity':1},600);
 			_.config.timeId.page_1[0]=setTimeout(function(){
 
-				$page.find(".color").stop().css({'display':'block','margin-top':-40,'opacity':0})
+				$page.find(".color").stop().css({'display':'block','margin-top':-120,'opacity':0})
 					.animate({'opacity':1},300);
-				$page.find(".txt1").stop().css({'display':'block','margin-top':-140,'opacity':0})
-					.animate({'margin-top':-240,'opacity':1},800);
-				$page.find(".music5").stop().css({'display':'block','margin-top':147,'opacity':0})
-					.animate({'margin-top':-83,'opacity':1},900,function(){
+				$page.find(".txt1").stop().css({'display':'block','margin-top':-220,'opacity':0})
+					.animate({'margin-top':-320,'opacity':1},800);
+				$page.find(".music5").stop().css({'display':'block','margin-top':67,'opacity':0})
+					.animate({'margin-top':-163,'opacity':1},900,function(){
 						_.autoScale($(this),1,1.1);
 					});
-				$page.find(".music4").stop().css({'display':'block','margin-top':157,'opacity':0})
-					.animate({'margin-top':-83,'opacity':1},700,function(){
+				$page.find(".music4").stop().css({'display':'block','margin-top':77,'opacity':0})
+					.animate({'margin-top':-163,'opacity':1},700,function(){
 						_.autoScale($(this),1,1.1);
 					});
-				$page.find(".pic1").stop().css({'display':'block','margin-top':220,'opacity':0})
-					.animate({'margin-top': -80,'opacity':1},1000,function(){
+				$page.find(".pic1").stop().css({'display':'block','margin-top':140,'opacity':0})
+					.animate({'margin-top': -160,'opacity':1},1000,function(){
 						//_.autoFlip($(this));
 					});
-				$page.find(".music3").stop().css({'display':'block','margin-top':141,'opacity':0})
-					.animate({'margin-top':-159,'opacity':1},500,function(){
+				$page.find(".music3").stop().css({'display':'block','margin-top':61,'opacity':0})
+					.animate({'margin-top':-239,'opacity':1},500,function(){
 						_.autoWave($(this),7000,1,50);
 					});
-				$page.find(".music2").stop().css({'display':'block','margin-top':149,'opacity':0})
-					.animate({'margin-top':-151,'opacity':1},650,function(){
+				$page.find(".music2").stop().css({'display':'block','margin-top':69,'opacity':0})
+					.animate({'margin-top':-231,'opacity':1},650,function(){
 						_.autoWave($(this),8000,1,60);
 					});
-				$page.find(".music1").stop().css({'display':'block','margin-top':341,'opacity':0})
-					.animate({'margin-top':41,'opacity':1},1500,function(){
+				$page.find(".music1").stop().css({'display':'block','margin-top':261,'opacity':0})
+					.animate({'margin-top':-39,'opacity':1},1500,function(){
 						_.autoWave($(this),6000,1,40);
 					});
 			},600);
@@ -552,7 +552,7 @@ $Tencent=window.$Tencent || {
 				clearTimeout(_.config.timeId.page_1[i]);
 			}
 			$page.find(".pic1,.music5,.music4,.music3,.music2,.music1,.txt1,.color,.colorbg")
-				.animate({"margin-top":-420,"opacity":0},1000,function(){
+				.animate({"margin-top":-500,"opacity":0},1000,function(){
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
@@ -560,39 +560,39 @@ $Tencent=window.$Tencent || {
 		$("#page_2").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.css({"display":"block","x":"0%","y":"0%"});
-			$("#guang").stop().animate({"margin-top":80},800);
-			$page.find(".colorbg").stop().css({'display':'block','margin-top':-70,'opacity':0})
-				.animate({'margin-top':-270,'opacity':1},600);
+			$("#guang").stop().animate({"margin-top":0},800);
+			$page.find(".colorbg").stop().css({'display':'block','margin-top':-150,'opacity':0})
+				.animate({'margin-top':-350,'opacity':1},600);
 			_.config.timeId.page_2[0]=setTimeout(function(){
-				$page.find(".music5").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':8,'opacity':1},600);
-				$page.find(".music4").stop().css({'display':'block','margin-top':297,'opacity':0})
-					.animate({'margin-top':147,'opacity':1},800,function(){
+				$page.find(".music5").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':-72,'opacity':1},600);
+				$page.find(".music4").stop().css({'display':'block','margin-top':217,'opacity':0})
+					.animate({'margin-top':67,'opacity':1},800,function(){
 						_.autoWave($(this),7000,1,40);
 					});
-				$page.find(".music3").stop().css({'display':'block','margin-top':380,'opacity':0})
-					.animate({'margin-top':301,'opacity':1},800,function(){
+				$page.find(".music3").stop().css({'display':'block','margin-top':300,'opacity':0})
+					.animate({'margin-top':221,'opacity':1},800,function(){
 						_.autoWave($(this),8000,1,40);
 					});
-				$page.find(".music2").stop().css({'display':'block','margin-top':447,'opacity':0})
-					.animate({'margin-top':301,'opacity':1},700,function(){
+				$page.find(".music2").stop().css({'display':'block','margin-top':367,'opacity':0})
+					.animate({'margin-top':221,'opacity':1},700,function(){
 						_.autoWave($(this),6000,1,30);
 					});
-				$page.find(".music1").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':145,'opacity':1},750,function(){
+				$page.find(".music1").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':65,'opacity':1},750,function(){
 						_.autoWave($(this),4000,1,20);
 					});
-				$page.find(".pic1").stop().css({'display':'block','margin-top':332,'opacity':0})
-					.animate({'margin-top':132,'opacity':1}, 500,function(){
+				$page.find(".pic1").stop().css({'display':'block','margin-top':252,'opacity':0})
+					.animate({'margin-top':52,'opacity':1}, 500,function(){
 						_.autoWave($(this),5000,1,30);
 					});
-				$page.find(".pic2").stop().css({'display':'block','margin-top':416,'opacity':0})
-					.animate({'margin-top':44,'opacity':1}, 800,function(){
+				$page.find(".pic2").stop().css({'display':'block','margin-top':336,'opacity':0})
+					.animate({'margin-top':-36,'opacity':1}, 800,function(){
 						_.autoWave($(this),4500,1,20);
 					});
-				$page.find(".txtbg").stop().css({'display':'block','margin-top':-353,'opacity':0})
+				$page.find(".txtbg").stop().css({'display':'block','margin-top':-433,'opacity':0})
 					.animate({"opacity":1},500,function(){
-						$page.find(".txt1").css({'display':'block','margin-top':-369,'rotate3d':'0,1,0.1,30deg','opacity':0})
+						$page.find(".txt1").css({'display':'block','margin-top':-449,'rotate3d':'0,1,0.1,30deg','opacity':0})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
 			},600);
@@ -607,7 +607,7 @@ $Tencent=window.$Tencent || {
 				$(this).css({"display":"none"});
 			});
 			$page.find(".music1,.music2,.music3,.music4,.music5,.pic1,.pic2,.colorbg").stop()
-				.animate({"margin-top":-420,"opacity":0},500,function(){
+				.animate({"margin-top":-500,"opacity":0},500,function(){
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
@@ -616,29 +616,29 @@ $Tencent=window.$Tencent || {
 		$("#page_3").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.css({"display":"block","x":"0%","y":"0%"});
-			$("#guang").stop().animate({"margin-top":-212},800);
-			$page.find(".colorbg").stop().css({'display':'block','margin-top':45,'opacity':0})
-				.animate({'margin-top':-162,'opacity':1},600);
+			$("#guang").stop().animate({"margin-top":-292},800);
+			$page.find(".colorbg").stop().css({'display':'block','margin-top':-35,'opacity':0})
+				.animate({'margin-top':-242,'opacity':1},600);
 			_.config.timeId.page_3[0]=setTimeout(function(){
-				$page.find(".pic1").stop().css({'display':'block','margin-top':80,'opacity':0})
-					.animate({'margin-top':-80,'opacity':1},600);
-				$page.find(".music4").stop().css({'display':'block','margin-top':80,'opacity':0})
-					.animate({'margin-top':-68,'opacity':1},700);
-				$page.find(".music3").stop().css({'display':'block','margin-top':297,'opacity':0})
-					.animate({'margin-top':206,'opacity':1},800,function(){
+				$page.find(".pic1").stop().css({'display':'block','margin-top':0,'opacity':0})
+					.animate({'margin-top':-160,'opacity':1},600);
+				$page.find(".music4").stop().css({'display':'block','margin-top':0,'opacity':0})
+					.animate({'margin-top':-148,'opacity':1},700);
+				$page.find(".music3").stop().css({'display':'block','margin-top':217,'opacity':0})
+					.animate({'margin-top':126,'opacity':1},800,function(){
 						_.autoWave($(this),7000,1,40);
 					});
-				$page.find(".music2").stop().css({'display':'block','margin-top':410,'opacity':0})
-					.animate({'margin-top':316,'opacity':1},800,function(){
+				$page.find(".music2").stop().css({'display':'block','margin-top':330,'opacity':0})
+					.animate({'margin-top':236,'opacity':1},800,function(){
 						_.autoWave($(this),8000,1,40);
 					});
-				$page.find(".music1").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':70,'opacity':1},700,function(){
+				$page.find(".music1").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':-10,'opacity':1},700,function(){
 						_.autoWave($(this),6000,1,30);
 					});
-				$page.find(".txtbg").stop().css({'display':'block','margin-top':-321,'opacity':0})
+				$page.find(".txtbg").stop().css({'display':'block','margin-top':-401,'opacity':0})
 					.animate({"opacity":1},500,function(){
-						$page.find(".txt1").css({'display':'block','margin-top':-351,'rotate3d':'0,1,0.1,30deg','opacity':0})
+						$page.find(".txt1").css({'display':'block','margin-top':-431,'rotate3d':'0,1,0.1,30deg','opacity':0})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
 
@@ -655,7 +655,7 @@ $Tencent=window.$Tencent || {
 				$(this).css({"display":"none"});
 			});
 			$page.find(".music1,.music2,.music3,.music4,.pic1,.colorbg").stop()
-				.animate({"margin-top":-420,"opacity":0},500,function(){
+				.animate({"margin-top":-500,"opacity":0},500,function(){
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
@@ -664,44 +664,44 @@ $Tencent=window.$Tencent || {
 		$("#page_4").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.css({"display":"block","x":"0%","y":"0%"});
-			$("#guang").stop().animate({"margin-top":-160},800);
-			$page.find(".colorbg").stop().css({'display':'block','margin-top':80,'opacity':0})
-				.animate({'margin-top':-152,'opacity':1},600);
+			$("#guang").stop().animate({"margin-top":-240},800);
+			$page.find(".colorbg").stop().css({'display':'block','margin-top':0,'opacity':0})
+				.animate({'margin-top':-232,'opacity':1},600);
 			_.config.timeId.page_4[0]=setTimeout(function(){
-				$page.find(".color").stop().css({'display':'block','margin-top':-116,'opacity':0})
+				$page.find(".color").stop().css({'display':'block','margin-top':-196,'opacity':0})
 					.animate({"opacity":1},500);
-				$page.find(".music4").stop().css({'display':'block','margin-top':280,'opacity':0})
-					.animate({'margin-top':160,'opacity':1},700);
-				$page.find(".music3").stop().css({'display':'block','margin-top':197,'opacity':0})
-					.animate({'margin-top':-20,'opacity':1},800,function(){
+				$page.find(".music4").stop().css({'display':'block','margin-top':200,'opacity':0})
+					.animate({'margin-top':80,'opacity':1},700);
+				$page.find(".music3").stop().css({'display':'block','margin-top':117,'opacity':0})
+					.animate({'margin-top':-100,'opacity':1},800,function(){
 						_.autoWave($(this),7000,1,40);
 					});
-				$page.find(".music2").stop().css({'display':'block','margin-top':510,'opacity':0})
-					.animate({'margin-top':366,'opacity':1},800,function(){
+				$page.find(".music2").stop().css({'display':'block','margin-top':430,'opacity':0})
+					.animate({'margin-top':286,'opacity':1},800,function(){
 						_.autoWave($(this),8000,1,40);
 					});
-				$page.find(".music1").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':121,'opacity':1},700,function(){
+				$page.find(".music1").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':41,'opacity':1},700,function(){
 						_.autoWave($(this),6000,1,30);
 					});
-				$page.find(".txtbg").stop().css({'display':'block','margin-top':-339,'opacity':0})
+				$page.find(".txtbg").stop().css({'display':'block','margin-top':-419,'opacity':0})
 					.animate({"opacity":1},500,function(){
-						$page.find(".txt1").css({'display':'block','margin-top':-355,'rotate3d':'0,1,0.1,30deg','opacity':0})
+						$page.find(".txt1").css({'display':'block','margin-top':-435,'rotate3d':'0,1,0.1,30deg','opacity':0})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
-				$page.find(".pic1").css({'display':'block','opacity':1,'scale':0,'margin-top':10})
+				$page.find(".pic1").css({'display':'block','opacity':1,'scale':0})
 					.transition({'scale':1},350,"easeOutQuart");
 			},600);
 			_.config.timeId.page_4[1]=setTimeout(function(){
-				$page.find(".pic2").css({'display':'block','opacity':1,'scale':0,'margin-top':33})
+				$page.find(".pic2").css({'display':'block','opacity':1,'scale':0})
 					.transition({'scale':1},350,"easeOutQuart");
 			},800);
 			_.config.timeId.page_4[2]=setTimeout(function(){
-				$page.find(".pic3").css({'display':'block','opacity':1,'scale':0,'margin-top':280})
+				$page.find(".pic3").css({'display':'block','opacity':1,'scale':0})
 					.transition({'scale':1},350,"easeOutQuart");
 			},1000);
 			_.config.timeId.page_4[3]=setTimeout(function(){
-				$page.find(".pic4").css({'display':'block','opacity':1,'scale':0,'margin-top':81})
+				$page.find(".pic4").css({'display':'block','opacity':1,'scale':0})
 					.transition({'scale':1},350,"easeOutBack");
 			},1200);			
 		});
@@ -715,7 +715,7 @@ $Tencent=window.$Tencent || {
 				$(this).css({"display":"none"});
 			});
 			$page.find(".music1,.music2,.music3,.music4,.color,.colorbg,.pic1,.pic2,.pic3,.pic4").stop()
-				.animate({"margin-top":-420,"opacity":0},500,function(){
+				.animate({"margin-top":-500,"opacity":0},500,function(){
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
@@ -724,38 +724,38 @@ $Tencent=window.$Tencent || {
 		$("#page_5").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.css({"display":"block","x":"0%","y":"0%"});
-			$("#guang").stop().animate({"margin-top":-224},800);
-			$page.find(".colorbg").stop().css({'display':'block','margin-top':80,'opacity':0})
-				.animate({'margin-top':-320,'opacity':1},600);
+			$("#guang").stop().animate({"margin-top":-304},800);
+			$page.find(".colorbg").stop().css({'display':'block','margin-top':0,'opacity':0})
+				.animate({'margin-top':-400,'opacity':1},600);
 			_.config.timeId.page_5[0]=setTimeout(function(){
-				$page.find(".music6").stop().css({'display':'block','margin-top':80,'opacity':0})
-					.animate({'margin-top':-102,'opacity':1},700);
-				$page.find(".music5").stop().css({'display':'block','margin-top':130,'opacity':0})
-					.animate({'margin-top':-38,'opacity':1},800,function(){
+				$page.find(".music6").stop().css({'display':'block','margin-top':0,'opacity':0})
+					.animate({'margin-top':-182,'opacity':1},700);
+				$page.find(".music5").stop().css({'display':'block','margin-top':50,'opacity':0})
+					.animate({'margin-top':-118,'opacity':1},800,function(){
 						_.autoWave($(this),7000,1,40);
 					});
-				$page.find(".music4").stop().css({'display':'block','margin-top':310,'opacity':0})
-					.animate({'margin-top':133,'opacity':1},800,function(){
+				$page.find(".music4").stop().css({'display':'block','margin-top':230,'opacity':0})
+					.animate({'margin-top':53,'opacity':1},800,function(){
 						_.autoWave($(this),8000,1,40);
 					});
-				$page.find(".music3").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':63,'opacity':1},700,function(){
+				$page.find(".music3").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':-17,'opacity':1},700,function(){
 						_.autoWave($(this),6000,1,40);
 					});
-				$page.find(".music2").stop().css({'display':'block','margin-top':280,'opacity':0})
-					.animate({'margin-top':162,'opacity':1},900,function(){
+				$page.find(".music2").stop().css({'display':'block','margin-top':200,'opacity':0})
+					.animate({'margin-top':82,'opacity':1},900,function(){
 						_.autoWave($(this),8000,1,50);
 					});
-				$page.find(".music1").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':56,'opacity':1},1000,function(){
+				$page.find(".music1").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':-24,'opacity':1},1000,function(){
 						_.autoWave($(this),6000,1,60);
 					});
-				$page.find(".pic1").stop().css({'display':'block','margin-top':247,'opacity':0})
-					.animate({'margin-top':40,'opacity':1},1000,function(){
+				$page.find(".pic1").stop().css({'display':'block','margin-top':167,'opacity':0})
+					.animate({'margin-top':-40,'opacity':1},1000,function(){
 						_.autoWave($(this),5000,1,20);
 					});
-				$page.find(".txtbg").stop().css({'display':'block','margin-top':-327,'opacity':0})
-					.animate({"opacity":1},580,function(){
+				$page.find(".txtbg").stop().css({'display':'block','margin-top':-407,'opacity':0})
+					.animate({"opacity":1},500,function(){
 						$page.find(".txt1").css({'display':'block','rotate3d':'0,1,0.1,30deg','opacity':0,'margin-top':-430})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
@@ -771,7 +771,7 @@ $Tencent=window.$Tencent || {
 				$(this).css({"display":"none"});
 			});
 			$page.find(".music1,.music2,.music3,.music4,.music5,.music6,.colorbg,.pic1").stop()
-				.animate({"margin-top":-420,"opacity":0},500,function(){
+				.animate({"margin-top":-500,"opacity":0},500,function(){
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
