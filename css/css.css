@@ -1,0 +1,459 @@
+html,body,div,h1,h2,h3,h4,h5,h6,p{margin: 0px;padding:0px;}
+a{text-decoration: none;}
+ul,li{list-style: none;margin: 0px;padding: 0px;}
+
+body{width: 100%;height: 100%;font-family: inherit;}
+#main{position: relative;width: 100%;height: 100%;margin: 0 auto;max-width: 640px;min-width: 640px;
+	background:#000;overflow:hidden;
+	background: url(../images/bg.jpg) center center no-repeat;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility:visible;
+    -moz-backface-visibility:visible;
+    -ms-backface-visibility:visible;
+    -o-backface-visibility:visible;
+    backface-visibility:visible;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+    -webkit-perspective-origin:50% 50%;
+    -moz-perspective-origin:50% 50%;
+    -ms-perspective-origin:50% 50%;
+    -o-perspective-origin:50% 50%;
+    perspective-origin:50% 50%;
+}
+.page{position: absolute;width: 100%;height: 100%;left:0px;top:0px;overflow: hidden;
+	-webkit-transform-origin: left top;
+	-moz-transform-origin: left top;
+	-ms-transform-origin: left top;
+	-o-transform-origin: left top;
+	transform-origin: left top;
+	-webkit-transform:translate(0%,0%);
+	-moz-transform:translate(0%,0%);
+	-ms-transform:translate(0%,0%);
+	-o-transform:translate(0%,0%);
+	transform:translate(0%,0%);
+	display: none;
+}
+
+#guang{
+	position: absolute;width: 640px;height: 798px;
+	left:50%;top:50%;display: none;
+	margin-left: -320px;margin-top: -325px;
+}
+
+/* 音乐按钮 */
+#btn_sound{
+	display: block;width: 40px;height: 40px;
+	position: absolute;right:30px;top: 20px;display: none;
+	background: url(../images/sound.png) 0 0 no-repeat;cursor: pointer;
+}
+#btn_sound.beplay{background-position: 0px -40px;}
+/* 翻页按钮  */
+#pagesign{
+	position: absolute;width: 46px;height: 46px;display: none;
+	left:50%;margin-left: -23px;bottom:50px;cursor: pointer;
+}
+/* LOGO  */
+#logo{position: absolute;width: 198px;height: 64px;left:15px;top:15px;display: none;}
+
+.colorbg,.color,
+.txt1,.txt2,.txt3,.txt4,.txt5,
+.music6,.music5,.music4,.music3,.music2,.music1,
+.pic1,.pic2,.pic3,.pic4,.pic5,
+.txtbg{display: none;}
+
+
+
+
+
+/*  首页  */
+#homepage{
+	-webkit-transform:translate(0%,0%);
+	-moz-transform:translate(0%,0%);
+	-ms-transform:translate(0%,0%);
+	-o-transform:translate(0%,0%);
+	transform:translate(0%,0%);display: block;
+}
+
+#homepage .qin{
+	position: absolute;width: 640px;height: 1136px;
+	left:50%;top:50%;display: none;
+	margin-left: -320px;margin-top: -568px;
+}
+#homepage .qinxian{
+	position: absolute;width: 174px;height: 925px;
+	left:50%;top:50%;
+	margin-left: -87px;margin-top: -357px;
+	/*background: url(../images/line.png) center top no-repeat;*/
+}
+#homepage .txt1,#homepage .txt2,#homepage .txt3{
+	position: absolute;width: 640px;height: 40px;text-align: center;
+	left:50%;margin-left: -320px;
+	top:50%;margin-top: -230px;display: none;
+}
+#homepage .txt2{
+	margin-top: -177px;
+}
+#homepage .txt3{
+	margin-top: -126px;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+}
+
+
+#page_1{}
+#page_1 .pic1{
+	position: absolute;width: 326px;height: 242px;
+	left:50%;top:50%;
+	margin-left: -165px;margin-top: -160px;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility:visible;
+    -moz-backface-visibility:visible;
+    -ms-backface-visibility:visible;
+    -o-backface-visibility:visible;
+    backface-visibility:visible;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+}
+#page_1 .colorbg{
+	position: absolute;width: 640px;height: 632px;
+	left:50%;top:50%;
+	margin-left: -320px;margin-top: -335px;
+}
+#page_1 .color{
+	position: absolute;width: 328px;height: 262px;
+	left:50%;top:50%;
+	margin-left: -260px;margin-top: -120px;
+}
+#page_1 .txt1{
+	position: absolute;width: 538px;height: 228px;
+	left:50%;top:50%;
+	margin-left: -300px;margin-top: -320px;
+}
+#page_1 .music5{
+	position: absolute;width: 138px;height: 168px;
+	left:50%;top:50%;
+	margin-left: -208px;margin-top: -163px;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-ms-transform-origin: right center;
+	-o-transform-origin: right center;
+	transform-origin: right center;
+}
+#page_1 .music4{
+	position: absolute;width: 138px;height: 168px;
+	left:50%;top:50%;
+	margin-left: 51px;margin-top: -163px;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-ms-transform-origin: left center;
+	-o-transform-origin: left center;
+	transform-origin: left center;
+}
+#page_1 .music3{
+	position: absolute;width: 58px;height: 76px;
+	left:50%;top:50%;
+	margin-left: -227px;margin-top: -239px;
+}
+#page_1 .music2{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 121px;margin-top: -231px;
+}
+#page_1 .music1{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: -247px;margin-top: -39px;
+}
+
+#page_2{}
+#page_2 .colorbg{
+	position: absolute;width: 640px;height: 814px;
+	left:50%;top:50%;
+	margin-left: -320px;margin-top: -350px;
+}
+#page_2 .music5{
+	position: absolute;width: 96px;height: 146px;
+	left:50%;top:50%;
+	margin-left: -355px;margin-top: -72px;
+}
+#page_2 .music4{
+	position: absolute;width: 64px;height: 72px;
+	left:50%;top:50%;
+	margin-left: 216px;margin-top: 67px;
+}
+#page_2 .music3{
+	position: absolute;width: 58px;height: 76px;
+	left:50%;top:50%;
+	margin-left: -306px;margin-top: 221px;
+}
+#page_2 .music2{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 193px;margin-top: 221px;
+}
+#page_2 .music1{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: -302px;margin-top: 65px;
+}
+#page_2 .pic1{
+	position: absolute;width: 438px;height: 272px;
+	left:50%;top:50%;
+	margin-left: -244px;margin-top: 52px;
+}
+#page_2 .pic2{
+	position: absolute;width: 332px;height: 380px;
+	left:50%;top:50%;
+	margin-left: -184px;margin-top: -36px;
+}
+#page_2 .txtbg{
+	position: absolute;width: 560px;height: 324px;
+	left:50%;top:50%;
+	margin-left: -293px;margin-top: -433px;
+}
+#page_2 .txt1{
+	position: absolute;width: 620px;height: 402px;
+	left:50%;top:50%;
+	margin-left: -303px;margin-top: -449px;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-ms-transform-origin: right center;
+	-o-transform-origin: right center;
+	transform-origin: right center;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#page_3{}
+#page_3 .colorbg{
+	position: absolute;width: 640px;height: 616px;
+	left:50%;top:50%;
+	margin-left: -320px;margin-top: -242px;
+}
+#page_3 .pic1{
+	position: absolute;width: 496px;height: 386px;
+	left:50%;top:50%;
+	margin-left: -276px;margin-top: -160px;
+}
+#page_3 .music4{
+	position: absolute;width: 96px;height: 146px;
+	left:50%;top:50%;
+	margin-left: -355px;margin-top: -148px;
+}
+#page_3 .music3{
+	position: absolute;width: 58px;height: 76px;
+	left:50%;top:50%;
+	margin-left: -256px;margin-top: 126px;
+}
+#page_3 .music2{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 187px;margin-top: 236px;
+}
+#page_3 .music1{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 187px;margin-top: -10px;
+}
+#page_3 .txtbg{
+	position: absolute;width: 564px;height: 212px;
+	left:50%;top:50%;
+	margin-left: -289px;margin-top: -401px;
+}
+#page_3 .txt1{
+	position: absolute;width: 620px;height: 286px;
+	left:50%;top:50%;
+	margin-left: -303px;margin-top: -431px;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-ms-transform-origin: right center;
+	-o-transform-origin: right center;
+	transform-origin: right center;
+	-webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+#page_4{}
+#page_4 .colorbg{
+	position: absolute;width: 640px;height: 668px;
+	left:50%;top:50%;
+	margin-left: -320px;margin-top: -232px;
+}
+#page_4 .color{
+	position: absolute;width: 622px;height: 652px;
+	left:50%;top:50%;
+	margin-left: -310px;margin-top: -196px;
+}
+#page_4 .music4{
+	position: absolute;width: 96px;height: 146px;
+	left:50%;top:50%;
+	margin-left: -355px;margin-top: 80px;
+}
+#page_4 .music3{
+	position: absolute;width: 58px;height: 76px;
+	left:50%;top:50%;
+	margin-left: -30px;margin-top: -100px;
+}
+#page_4 .music2{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: -132px;margin-top: 286px;
+}
+#page_4 .music1{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 187px;margin-top: 41px;
+}
+#page_4 .pic1{
+	position: absolute;width: 118px;height: 112px;
+	left:50%;top:50%;
+	margin-left: 70px;margin-top: -70px;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+}
+#page_4 .pic2{
+	position: absolute;width: 154px;height: 158px;
+	left:50%;top:50%;
+	margin-left: -285px;margin-top: -47px;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+}
+#page_4 .pic3{
+	position: absolute;width: 190px;height: 158px;
+	left:50%;top:50%;
+	margin-left: 50px;margin-top: 200px;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+}
+#page_4 .pic4{
+	position: absolute;width: 290px;height: 266px;
+	left:50%;top:50%;
+	margin-left: -150px;margin-top: 1px;
+	-webkit-transform-origin: center center;
+	-moz-transform-origin: center center;
+	-ms-transform-origin: center center;
+	-o-transform-origin: center center;
+	transform-origin: center center;
+}
+#page_4 .txtbg{
+	position: absolute;width: 572px;height: 284px;
+	left:50%;top:50%;
+	margin-left: -306px;margin-top: -419px;
+}
+#page_4 .txt1{
+	position: absolute;width: 608px;height: 362px;
+	left:50%;top:50%;
+	margin-left: -300px;margin-top: -435px;
+}
+
+#page_5 .colorbg{
+	position: absolute;width: 616px;height: 734px;
+	left:50%;top:50%;
+	margin-left: -320px;margin-top: -400px;
+}
+#page_5 .pic1{
+	position: absolute;width: 238px;height: 546px;
+	left:50%;top:50%;
+	margin-left: -144px;margin-top: -40px;
+}
+#page_5 .music6{
+	position: absolute;width: 96px;height: 146px;
+	left:50%;top:50%;
+	margin-left: -355px;margin-top: -182px;
+}
+#page_5 .music5{
+	position: absolute;width: 84px;height: 122px;
+	left:50%;top:50%;
+	margin-left: 126px;margin-top: -118px;
+}
+#page_5 .music4{
+	position: absolute;width: 40px;height: 78px;
+	left:50%;top:50%;
+	margin-left: 113px;margin-top: 53px;
+}
+#page_5 .music3{
+	position: absolute;width: 86px;height: 142px;
+	left:50%;top:50%;
+	margin-left: -229px;margin-top: -17px;
+}
+#page_5 .music2{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 169px;margin-top: 82px;
+}
+#page_5 .music1{
+	position: absolute;width: 80px;height: 70px;
+	left:50%;top:50%;
+	margin-left: 187px;margin-top: -24px;
+}
+#page_5 .txtbg{
+	position: absolute;width: 632px;height: 214px;
+	left:50%;top:50%;
+	margin-left: -318px;margin-top: -407px;
+}
+#page_5 .txt1{
+	position: absolute;width: 616px;height: 370px;
+	left:50%;top:50%;
+	margin-left: -300px;margin-top: -430px;
+}
+
+#page_6{background: url(../images/bg2.jpg) center center no-repeat;}
+#page_6 .btn_1{
+	display: block;width: 290px;height: 148px;
+	left:50%;top:50%;position: absolute;
+	margin-left: -145px;margin-top: 160px;
+}
+#page_6 .btn_2{
+	display: block;width: 430px;height: 184px;
+	left:50%;top:50%;position: absolute;
+	margin-left: -220px;margin-top: -115px;
+}
+
+#p_tips{
+	display: none;
+	position:absolute;position: fixed;z-index: 11;
+	width: 300px;height:auto;right:0px;top:50%;padding:35px;
+	background: #141414;background: rgba(20,20,20,0.8);
+	font-size: 24px;color:#FFF;
+	-webkit-transform:translate(100%,0%);
+	-moz-transform:translate(100%,0%);
+	-ms-transform:translate(100%,0%);
+	-o-transform:translate(100%,0%);
+	transform:translate(100%,0%);
+}
+
+
+
+
