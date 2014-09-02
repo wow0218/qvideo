@@ -360,7 +360,7 @@ $Tencent=window.$Tencent || {
         	},100);
         	setTimeout(function(){
         		_.config.homepage.bemove=false;
-        		if(mIndex>=2){
+        		if(mIndex>=3){
         			_.playMusic(4);
         		}
         	},400);
