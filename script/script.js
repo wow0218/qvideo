@@ -411,7 +411,7 @@ $Tencent=window.$Tencent || {
 		//开始计时以及计数
 		clearTimeout(_.config.timeId.homepage[2]);
 	    //_.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;
-	    var during=_.config.homepage.playtimes>=4 ? 1000 :3500;
+	    var during=_.config.homepage.playtimes>=4 ? 1500 :4000;
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
 	    	$("#homepage").addClass("belight");
