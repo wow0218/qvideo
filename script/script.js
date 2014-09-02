@@ -360,9 +360,6 @@ $Tencent=window.$Tencent || {
         	},100);
         	setTimeout(function(){
         		_.config.homepage.bemove=false;
-        		if(mIndex>=3){
-        			_.playMusic(4);
-        		}
         	},400);
         }else if(endX-_.config.homepage.startX<=-75){//向左滑动
         	_.lineAnimate(cvs,index,0,-30,100,"",1); 
@@ -413,7 +410,12 @@ $Tencent=window.$Tencent || {
 		//开始计时以及计数
 		clearTimeout(_.config.timeId.homepage[2]);
 	    //_.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;
-	    var during=_.config.homepage.playtimes>=4 ? 500 :3200;
+	    var during=500;
+	    if(_.config.homepage.playtimes>=4){
+	    	during=3200;
+        	_.playMusic(4);
+	    }
+	    
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
 	    	$("#homepage").addClass("belight");
