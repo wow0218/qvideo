@@ -250,8 +250,11 @@ $Tencent=window.$Tencent || {
 	resetMusic:function(index){
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
+
 		if(typeof(music.currentTime) !='undefined'){
+			alert(music.currentTime);
 			music.currentTime=0;
+			alert(music.currentTime);
 		}
 	},
 	autoWave:function($obj,during,cstep,dx,beback){
