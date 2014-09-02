@@ -529,15 +529,15 @@ $Tencent=window.$Tencent || {
 	            var during=10;
 	            var cur=$(".page").index($(".page.cur"));
 				var s=$(".page").size();
-	            if(endY-_.config.pages.startY>=150){ //向下滑动
+	            if(endY-_.config.pages.startY>=75){ //向下滑动
 	            	var t= cur-1<=0? 0:cur-1;
 	            	if(t==0){_.config.pages.bemove=false;return;}//禁止滑动返回首页
 					_.mainPageSlider(cur,t);
-	            	during=500;
-	            }else if(endY-_.config.pages.startY<=-150){//向上滑动
+	            	during=300;
+	            }else if(endY-_.config.pages.startY<=-75){//向上滑动
 					var t= cur+1 >=s? s-1:cur+1;
 					_.mainPageSlider(cur,t);
-					during=500;
+					during=300;
 	            }
 	            setTimeout(function(){
 	            	_.config.pages.bemove=false;
