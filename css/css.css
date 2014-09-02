@@ -88,7 +88,7 @@ body{width: 100%;height: 100%;font-family: inherit;}
 }
 #homepage .qinxian{
 	position: absolute;width: 174px;height: 925px;
-	left:50%;top:50%;
+	left:50%;top:50%;display: none;
 	margin-left: -87px;margin-top: -357px;
 	/*background: url(../images/line.png) center top no-repeat;*/
 }

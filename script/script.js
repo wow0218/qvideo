@@ -354,6 +354,8 @@ $Tencent=window.$Tencent || {
 				});
 		},1600);
 
+		$page.find(".qinxian").css({"display":"block"});
+
 		$("#guang").fadeOut(200);
 	    $("#btn_sound").fadeOut(200);
 	    $("#logo").fadeOut(200);
