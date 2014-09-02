@@ -350,7 +350,6 @@ $Tencent=window.$Tencent || {
         _.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;//0;//Math.floor(Math.random()*4);
         var mIndex=_.config.homepage.playtimes-1;
         //_.reloadMusic(mIndex);
-        console.log(mIndex);
         var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
             endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
         if(endX-_.config.homepage.startX>=75){ //向右滑动
@@ -362,6 +361,9 @@ $Tencent=window.$Tencent || {
         	},100);
         	setTimeout(function(){
         		_.config.homepage.bemove=false;
+        		if(mIndex>=2){
+        			_.playMusic(4);
+        		}
         	},400);
         }else if(endX-_.config.homepage.startX<=-75){//向左滑动
         	_.lineAnimate(cvs,index,0,-30,100,"",1); 
@@ -420,7 +422,7 @@ $Tencent=window.$Tencent || {
 	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},500);
 	    	$("#homepage").find(".txt2").stop().animate({"opacity":0,"margin-top":-177},500);
 	    	$("#homepage").find(".txt3").stop().animate({"opacity":0,"margin-top":-136},500);
-	    	_.playMusic(4);
+	    	//_.playMusic(4);
 	    	$("#guang").fadeIn(1000);
 	    	$("#btn_sound").fadeIn(200);
 	    	_.config.timeId.homepage[3]=setTimeout(function(){
