@@ -335,10 +335,51 @@ $Tencent=window.$Tencent || {
 		},6020));
 		return _;
 	},
+	touchMoveHandler:function(e){
+		var _=$Tencent;
+		e = e || window.event;
+        if(!!_.config.homepage.bemove){return;}
+        _.config.homepage.bemove=true;
+        var cvs=document.getElementById("jitaxian");
+        var index=Math.floor(Math.random()*5);
+        var mIndex=Math.floor(Math.random()*4);
+        _.reloadMusic(mIndex);
+        var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
+            endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
+        if(endX-_.config.homepage.startX>=75){ //向右滑动
+            _.lineAnimate(cvs,index,0,30,100,"",1);
+            //if(_.config.beJita){
+            	_.playMusic(mIndex);
+            //}
+            _.homepageTimer();
+        	setTimeout(function(){
+        		_.lineAnimate(cvs,index,30,0,300,"Out",1);
+        	},100);
+        	setTimeout(function(){
+        		_.config.homepage.bemove=false;
+        	},400);
+        }else if(endX-_.config.homepage.startX<=-750){//向左滑动
+        	_.lineAnimate(cvs,index,0,-30,100,"",1); 
+        	//if(_.config.beJita){
+        		_.playMusic(mIndex);
+        	//}
+        	_.homepageTimer();
+        	setTimeout(function(){
+        		_.lineAnimate(cvs,index,-30,0,300,"Out",1);
+        	},100);
+        	setTimeout(function(){
+        		_.config.homepage.bemove=false;
+        	},400);
+        }else{
+        	_.config.homepage.bemove=false;
+        }
+	},
 	renderHomePage:function(){
 		var $page=$("#homepage");
 		var _=this;
-		_.config.beJita=true;
+		//_.config.beJita=true;
+		document.getElementById("homepage").addEventListener("ontouchend" in document ? "touchend" : "mouseup",_.touchMoveHandler,false);
+
 		$page.find(".qin").stop().css({"display":"block","opacity":0})
 			.animate({"opacity":1},200);
 		$page.find(".txt1").stop().css({"display":"block","opacity":0,"margin-top":-200})
@@ -371,7 +412,10 @@ $Tencent=window.$Tencent || {
 	    var during=_.config.homepage.playtimes>=4 ? 500 :3000;
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
-	    	_.config.beJita=false;
+	    	//_.config.beJita=false;
+	    	document.getElementById("homepage").removeEventListener("ontouchend" in document ? "touchend" : "mouseup",_.touchMoveHandler);
+
+
 	    	$("#homepage").addClass("belight");
 	    	_.clearTimer($("#homepage").find(".txt3"));
 	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},500);
@@ -448,44 +492,7 @@ $Tencent=window.$Tencent || {
 	        _.config.homepage.startX= !!e.changedTouches ? e.changedTouches[0].pageX:e.pageX;
 	        _.config.homepage.startY= !!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
 	    },false);
-	    document.getElementById("homepage").addEventListener("ontouchend" in document ? "touchend" : "mouseup",function(e){
-	        e = e || window.event;
-	        if(!!_.config.homepage.bemove){return;}
-	        _.config.homepage.bemove=true;
-	        var cvs=document.getElementById("jitaxian");
-	        var index=Math.floor(Math.random()*5);
-	        var mIndex=Math.floor(Math.random()*4);
-	        _.reloadMusic(mIndex);
-	        var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
-	            endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
-	        if(endX-_.config.homepage.startX>=150){ //向右滑动
-	            _.lineAnimate(cvs,index,0,30,100,"",1);
-	            if(_.config.beJita){
-	            	_.playMusic(mIndex);
-	            }
-	            _.homepageTimer();
-	        	setTimeout(function(){
-	        		_.lineAnimate(cvs,index,30,0,300,"Out",1);
-	        	},100);
-	        	setTimeout(function(){
-	        		_.config.homepage.bemove=false;
-	        	},400);
-	        }else if(endX-_.config.homepage.startX<=-150){//向左滑动
-	        	_.lineAnimate(cvs,index,0,-30,100,"",1); 
-	        	if(_.config.beJita){
-	        		_.playMusic(mIndex);
-	        	}
-	        	_.homepageTimer();
-	        	setTimeout(function(){
-	        		_.lineAnimate(cvs,index,-30,0,300,"Out",1);
-	        	},100);
-	        	setTimeout(function(){
-	        		_.config.homepage.bemove=false;
-	        	},400);
-	        }else{
-	        	_.config.homepage.bemove=false;
-	        }
-	    },false);
+	   
 
 		$(window).on("resize",_.resizeHandler).trigger("resize");		
 		
