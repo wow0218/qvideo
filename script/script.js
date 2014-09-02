@@ -344,7 +344,7 @@ $Tencent=window.$Tencent || {
 
         var cvs=document.getElementById("jitaxian");
         var index=Math.floor(Math.random()*5);
-        var mIndex=Math.floor(Math.random()*4);
+        var mIndex=0;//Math.floor(Math.random()*4);
         //_.reloadMusic(mIndex);
         var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
             endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
