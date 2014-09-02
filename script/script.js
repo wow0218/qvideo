@@ -524,14 +524,14 @@ $Tencent=window.$Tencent || {
 				var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
 	            	endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
 	            var thisId=this.getAttribute("id");
-	            if(thisId=="homepage" || thisId=="page_6" || !!_.config.pages.bemove){return;}
+	            if(thisId=="homepage" || thisId=="page_6" || !!_.config.pages.bemove){_.config.pages.bemove=false;return;}
 	            _.config.pages.bemove=true;
 	            var during=10;
 	            var cur=$(".page").index($(".page.cur"));
 				var s=$(".page").size();
 	            if(endY-_.config.pages.startY>=150){ //向下滑动
 	            	var t= cur-1<=0? 0:cur-1;
-	            	if(t==0){return;}//禁止滑动返回首页
+	            	if(t==0){_.config.pages.bemove=false;return;}//禁止滑动返回首页
 					_.mainPageSlider(cur,t);
 	            	during=500;
 	            }else if(endY-_.config.pages.startY<=-150){//向上滑动
