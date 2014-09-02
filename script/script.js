@@ -841,7 +841,7 @@ $Tencent=window.$Tencent || {
 			$("#logo").fadeOut(200);
 			_.clearTimer($("#pagesign"));
 			$("#pagesign").fadeOut(200);
-			$("#btn_sound").fadeOut(200);
+			$("#btn_sound").fadeOut(100);
 		});
 		$("#page_6").bind("pageOut",function(e,beback){
 			var $page=$(this);
