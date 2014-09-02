@@ -221,7 +221,7 @@ $Tencent=window.$Tencent || {
 		}
 	},
 	playMusic:function (index){
-		
+		alert(111);
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
 		if($("#homepage").hasClass("belight") && index<4){return;}
