@@ -340,7 +340,6 @@ $Tencent=window.$Tencent || {
 		e = e || window.event;
         if(!!_.config.homepage.bemove || !_.config.beJita){return;}
         _.config.homepage.bemove=true;
-        _.config.beJita=false;
 
         var cvs=document.getElementById("jitaxian");
         var index=Math.floor(Math.random()*5);
@@ -357,7 +356,6 @@ $Tencent=window.$Tencent || {
         	},100);
         	setTimeout(function(){
         		_.config.homepage.bemove=false;
-        		_.config.beJita=true;
         	},400);
         }else if(endX-_.config.homepage.startX<=-750){//向左滑动
         	_.lineAnimate(cvs,index,0,-30,100,"",1); 
@@ -370,17 +368,17 @@ $Tencent=window.$Tencent || {
         	},100);
         	setTimeout(function(){
         		_.config.homepage.bemove=false;
-        		_.config.beJita=true;
         	},400);
         }else{
         	_.config.homepage.bemove=false;
-        	_.config.beJita=true;
         }
 	},
 	renderHomePage:function(){
 		var $page=$("#homepage");
 		var _=this;
 		_.config.beJita=true;
+		_.config.homepage.playtimes=0;
+
 		$page.find(".qin").stop().css({"display":"block","opacity":0})
 			.animate({"opacity":1},200);
 		$page.find(".txt1").stop().css({"display":"block","opacity":0,"margin-top":-200})
