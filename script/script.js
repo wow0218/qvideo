@@ -211,6 +211,15 @@ $Tencent=window.$Tencent || {
 			},pertime);
 		}
 	},
+	reloadMusic:function(index){//不加载 index
+		var mId=["M1","M2","M3","M4","BGM"];
+		for(var i=0;i<mId.length && i!=index;i++){
+			var m=document.getElementById(mId[i]);
+			if(m.readyState !==4){
+				typeof(m.load)=='function' && m.load();
+			}
+		}
+	},
 	playMusic:function (index){
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
@@ -444,7 +453,7 @@ $Tencent=window.$Tencent || {
 	        var cvs=document.getElementById("jitaxian");
 	        var index=Math.floor(Math.random()*5);
 	        var mIndex=Math.floor(Math.random()*4);
-
+	        _.reloadMusic(mIndex);
 	        var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
 	            endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
 	        if(endX-_.config.homepage.startX>=150){ //向右滑动
