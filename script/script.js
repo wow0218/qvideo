@@ -522,6 +522,7 @@ $Tencent=window.$Tencent || {
 				var s=$(".page").size();
 	            if(endY-_.config.pages.startY>=150){ //向下滑动
 	            	var t= cur-1<=0? 0:cur-1;
+	            	if(t==0){return;}//禁止滑动返回首页
 					_.mainPageSlider(cur,t);
 	            	during=500;
 	            }else if(endY-_.config.pages.startY<=-150){//向上滑动
