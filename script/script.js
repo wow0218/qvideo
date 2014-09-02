@@ -347,8 +347,9 @@ $Tencent=window.$Tencent || {
 
         var cvs=document.getElementById("jitaxian");
         var index=Math.floor(Math.random()*5);
-        var mIndex=0;//Math.floor(Math.random()*4);
+        var mIndex=_.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;//0;//Math.floor(Math.random()*4);
         //_.reloadMusic(mIndex);
+        console.log(mIndex);
         var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
             endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
         if(endX-_.config.homepage.startX>=75){ //向右滑动
@@ -409,8 +410,8 @@ $Tencent=window.$Tencent || {
 		var _=this;
 		//开始计时以及计数
 		clearTimeout(_.config.timeId.homepage[2]);
-	    _.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;
-	    var during=_.config.homepage.playtimes>=6 ? 500 :3500;
+	    //_.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;
+	    var during=_.config.homepage.playtimes>=4 ? 1000 :3500;
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
 	    	$("#homepage").addClass("belight");
