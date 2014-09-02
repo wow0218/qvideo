@@ -349,7 +349,6 @@ $Tencent=window.$Tencent || {
         var index=Math.floor(Math.random()*5);
         _.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;//0;//Math.floor(Math.random()*4);
         var mIndex=_.config.homepage.playtimes-1;
-        //_.reloadMusic(mIndex);
         var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
             endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
         if(endX-_.config.homepage.startX>=75){ //向右滑动
