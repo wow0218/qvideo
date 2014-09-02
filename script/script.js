@@ -338,13 +338,13 @@ $Tencent=window.$Tencent || {
 	touchMoveHandler:function(e){
 		var _=$Tencent;
 		e = e || window.event;
-        if(!!_.config.homepage.bemove || !_.config.beJita){return;}
+        if(!!_.config.homepage.bemove){return;}
         _.config.homepage.bemove=true;
 
         var cvs=document.getElementById("jitaxian");
         var index=Math.floor(Math.random()*5);
         var mIndex=Math.floor(Math.random()*4);
-        _.reloadMusic(mIndex);
+        //_.reloadMusic(mIndex);
         var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
             endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
         if(endX-_.config.homepage.startX>=75){ //向右滑动
@@ -352,16 +352,14 @@ $Tencent=window.$Tencent || {
             _.playMusic(mIndex);
             _.homepageTimer();
         	setTimeout(function(){
-        		_.lineAnimate(cvs,index,30,0,300,"Out",1);
+        		_.lineAnimate(cvs,index,25,0,300,"Out",1);
         	},100);
         	setTimeout(function(){
         		_.config.homepage.bemove=false;
         	},400);
-        }else if(endX-_.config.homepage.startX<=-750){//向左滑动
+        }else if(endX-_.config.homepage.startX<=-75){//向左滑动
         	_.lineAnimate(cvs,index,0,-30,100,"",1); 
-        	//if(_.config.beJita){
-        		_.playMusic(mIndex);
-        	//}
+        	_.playMusic(mIndex);
         	_.homepageTimer();
         	setTimeout(function(){
         		_.lineAnimate(cvs,index,-30,0,300,"Out",1);
