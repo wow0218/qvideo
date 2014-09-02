@@ -224,7 +224,7 @@ $Tencent=window.$Tencent || {
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
 		if($("#homepage").hasClass("belight") && index<4){return;}
-		music.paused && typeof(music.play)=='function' && music.play();
+		typeof(music.play)=='function' && music.play();
 		if(index==4){
 			if(!!music.paused){
 				$("#btn_sound").removeClass("beplay");
