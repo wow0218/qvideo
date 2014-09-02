@@ -1,9 +1,9 @@
 var dataForWeixin={
     appId:'',
     MsgImg:'',
-    TLImg:'',
+    TLImg:'../images/shareto.jpg',
     link:'',
-    title:'',
+    title:'来《hi歌》，对新的自己Say Hi',
     desc:'',
     callback:function(){
     	
@@ -119,9 +119,8 @@ $Tencent=window.$Tencent || {
 			"page_5":[],
 			"page_6":[]
 		},
-		"homepage":{
-
-		}
+		"homepage":{},
+		"pages":{}
 	},
 	resizeHandler:function(){
 		var ww=window.innerWidth,
@@ -330,6 +329,7 @@ $Tencent=window.$Tencent || {
 	renderHomePage:function(){
 		var $page=$("#homepage");
 		var _=this;
+		_.config.beJita=true;
 		$page.find(".qin").stop().css({"display":"block","opacity":0})
 			.animate({"opacity":1},200);
 		$page.find(".txt1").stop().css({"display":"block","opacity":0,"margin-top":-200})
@@ -344,6 +344,12 @@ $Tencent=window.$Tencent || {
 					_.autoScale($(this),1,1.1);
 				});
 		},1600);
+
+		$("#guang").fadeOut(200);
+	    $("#btn_sound").fadeOut(200);
+	    $("#logo").fadeOut(200);
+		_.clearTimer($("#pagesign"));
+		$("#pagesign").fadeOut(200);
 		return _;
 	},
 	homepageTimer:function(){
@@ -351,17 +357,21 @@ $Tencent=window.$Tencent || {
 		//开始计时以及计数
 		clearTimeout(_.config.timeId.homepage[2]);
 	    _.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;
-	    var during=_.config.homepage.playtimes>=4 ? 700 :3500;
+	    var during=_.config.homepage.playtimes>=4 ? 500 :3000;
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
+	    	_.config.beJita=false;
 	    	$("#homepage").addClass("belight");
 	    	_.clearTimer($("#homepage").find(".txt3"));
-	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},300);
-	    	$("#homepage").find(".txt2").stop().animate({"opacity":0,"margin-top":-177},300);
-	    	$("#homepage").find(".txt3").stop().animate({"opacity":0,"margin-top":-136},300);
+	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},500);
+	    	$("#homepage").find(".txt2").stop().animate({"opacity":0,"margin-top":-177},500);
+	    	$("#homepage").find(".txt3").stop().animate({"opacity":0,"margin-top":-136},500);
 	    	_.playMusic(4);
-	    	$("#guang").fadeIn(500);
+	    	$("#guang").fadeIn(1000);
 	    	$("#btn_sound").fadeIn(200);
+	    	_.config.timeId.homepage[3]=setTimeout(function(){
+	    		_.mainPageSlider(null,1);
+	    	},1000);
 	    },during);
 	    return _;
 	},
@@ -384,6 +394,7 @@ $Tencent=window.$Tencent || {
 		for(var i=0;i<_.config.timeId.homepage.length;i++){
 			clearTimeout(_.config.timeId.homepage[i]);
 		}
+		_.config.homepage.playtimes=0;
 	},
 	//弹层
 	renderPopWin:function(id,during){
@@ -413,13 +424,13 @@ $Tencent=window.$Tencent || {
 	eventInit:function(){
 		var _=this;
 		document.addEventListener('touchmove', function (e) { 
-			if(_.stopmove){
+			//if(_.stopmove){
 				e.preventDefault(); 
-				_.stopmove=false;
-			}
+			// 	_.stopmove=false;
+			// }
 		},false);
 		document.getElementById("homepage").addEventListener("ontouchmove" in document ? "touchmove" : "mousemove",function(e){
-			stopmove=true;
+			//_.stopmove=true;
 		},false);
 	    document.getElementById("homepage").addEventListener("ontouchstart" in document ? "touchstart" : "mousedown",function(e){
 	        e = e || window.event;
@@ -438,7 +449,9 @@ $Tencent=window.$Tencent || {
 	            endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
 	        if(endX-_.config.homepage.startX>=150){ //向右滑动
 	            _.lineAnimate(cvs,index,0,30,100,"",1);
-	            _.playMusic(mIndex);
+	            if(_.config.beJita){
+	            	_.playMusic(mIndex);
+	            }
 	            _.homepageTimer();
 	        	setTimeout(function(){
 	        		_.lineAnimate(cvs,index,30,0,300,"Out",1);
@@ -448,7 +461,9 @@ $Tencent=window.$Tencent || {
 	        	},400);
 	        }else if(endX-_.config.homepage.startX<=-150){//向左滑动
 	        	_.lineAnimate(cvs,index,0,-30,100,"",1); 
-	        	_.playMusic(mIndex);
+	        	if(_.config.beJita){
+	        		_.playMusic(mIndex);
+	        	}
 	        	_.homepageTimer();
 	        	setTimeout(function(){
 	        		_.lineAnimate(cvs,index,-30,0,300,"Out",1);
@@ -480,9 +495,45 @@ $Tencent=window.$Tencent || {
 		$("#pagesign").bind("click",function(){
 			var cur=$(".page").index($(".page.cur"));
 			var s=$(".page").size();
-			var t= cur+1 >=s? s-1:cur+1
+			var t= cur+1 >=s? s-1:cur+1;
 			_.mainPageSlider(cur,t);
 		});
+		var _pages=document.getElementsByClassName("page");
+		for(var i=0;i<_pages.length;i++){
+			_pages[i].addEventListener("ontouchstart" in document ? "touchstart" : "mousedown",function(e){
+				 e = e || window.event;
+		        _.config.pages.startX= !!e.changedTouches ? e.changedTouches[0].pageX:e.pageX;
+		        _.config.pages.startY= !!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
+			},false);
+			_pages[i].addEventListener("ontouchmove" in document ? "touchmove" : "mousemove",function(e){
+				e = e || window.event;
+		        _.config.pages.curX= !!e.changedTouches ? e.changedTouches[0].pageX:e.pageX;
+		        _.config.pages.curY= !!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
+			},false);
+			_pages[i].addEventListener("ontouchend" in document ? "touchend" : "mouseup",function(e){
+				e = e || window.event;
+				var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
+	            	endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
+	            var thisId=this.getAttribute("id");
+	            if(thisId=="homepage" || thisId=="page_6" || !!_.config.pages.bemove){return;}
+	            _.config.pages.bemove=true;
+	            var during=10;
+	            var cur=$(".page").index($(".page.cur"));
+				var s=$(".page").size();
+	            if(endY-_.config.pages.startY>=150){ //向下滑动
+	            	var t= cur-1<=0? 0:cur-1;
+					_.mainPageSlider(cur,t);
+	            	during=500;
+	            }else if(endY-_.config.pages.startY<=-150){//向上滑动
+					var t= cur+1 >=s? s-1:cur+1;
+					_.mainPageSlider(cur,t);
+					during=500;
+	            }
+	            setTimeout(function(){
+	            	_.config.pages.bemove=false;
+	            },during);
+			},false);
+		}
 		return _;
 	},
 	pageEventInit:function(){
@@ -535,7 +586,6 @@ $Tencent=window.$Tencent || {
 						_.autoWave($(this),6000,1,40);
 					});
 			},600);
-
 			//显示 LOGO 翻页
 			$("#logo").fadeIn(300);
 			_.huxiAnimate($("#pagesign"),0.2,1);
@@ -544,10 +594,7 @@ $Tencent=window.$Tencent || {
 			var $page=$(this);
 			//清除定时器
 			_.clearAutoWave($page.find(".music1,.music2,.music3"));
-			// _.clearAutoWave($page.find(".music2"));
-			// _.clearAutoWave($page.find(".music3"));
 			_.clearTimer($page.find(".music4,.music5"));
-			//_.clearTimer($page.find(".music5"));
 			for(var i=0;i<_.config.timeId.page_1.length;i++){
 				clearTimeout(_.config.timeId.page_1[i]);
 			}
@@ -611,7 +658,6 @@ $Tencent=window.$Tencent || {
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
-
 		});
 		$("#page_3").bind("pageIn",function(e,beback){
 			var $page=$(this);
@@ -641,7 +687,6 @@ $Tencent=window.$Tencent || {
 						$page.find(".txt1").css({'display':'block','margin-top':-351,'rotate3d':'0,1,0.1,30deg','opacity':0})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
-
 			},300);
 
 		});
