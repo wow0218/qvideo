@@ -224,11 +224,7 @@ $Tencent=window.$Tencent || {
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
 		if($("#homepage").hasClass("belight") && index<4){return;}
-		//_.resetMusic(index);
-		if(typeof(music.currentTime) !='undefined'){
-			music.currentTime=0;
-			alert(111);
-		}
+		music.currentTime=0;
 		typeof(music.play)=='function' && music.play();
 		if(index==4){
 			if(!!music.paused){
