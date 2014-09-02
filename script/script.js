@@ -223,6 +223,7 @@ $Tencent=window.$Tencent || {
 	playMusic:function (index){
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
+		if($("#homepage").hasClass("belight") && index<4){return;}
 		music.paused && typeof(music.play)=='function' && music.play();
 		if(index==4){
 			if(!!music.paused){
@@ -391,7 +392,7 @@ $Tencent=window.$Tencent || {
 					_.autoScale($(this),1,1.1);
 				});
 		},1600);
-
+		$("#homepage").removeClass("belight");
 		$page.find(".qinxian").css({"display":"block"});
 
 		$("#guang").fadeOut(200);
@@ -409,9 +410,6 @@ $Tencent=window.$Tencent || {
 	    var during=_.config.homepage.playtimes>=4 ? 500 :3000;
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
-	    	_.config.beJita=false;
-	    	//document.getElementById("homepage").addEventListener("ontouchend" in document ? "touchend" : "mouseup",_.touchMoveHandler);
-
 	    	$("#homepage").addClass("belight");
 	    	_.clearTimer($("#homepage").find(".txt3"));
 	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},500);
