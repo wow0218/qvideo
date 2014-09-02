@@ -351,7 +351,7 @@ $Tencent=window.$Tencent || {
         if(endX-_.config.homepage.startX>=75){ //向右滑动
             _.lineAnimate(cvs,index,0,30,100,"",1);
             _.playMusic(mIndex);
-            _.homepageTimer();
+            //_.homepageTimer();
         	setTimeout(function(){
         		_.lineAnimate(cvs,index,25,0,300,"Out",1);
         	},100);
@@ -361,7 +361,7 @@ $Tencent=window.$Tencent || {
         }else if(endX-_.config.homepage.startX<=-75){//向左滑动
         	_.lineAnimate(cvs,index,0,-30,100,"",1); 
         	_.playMusic(mIndex);
-        	_.homepageTimer();
+        	//_.homepageTimer();
         	setTimeout(function(){
         		_.lineAnimate(cvs,index,-30,0,300,"Out",1);
         	},100);
