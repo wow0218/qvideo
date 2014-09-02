@@ -221,11 +221,14 @@ $Tencent=window.$Tencent || {
 		}
 	},
 	playMusic:function (index){
-		var _=this;
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
 		if($("#homepage").hasClass("belight") && index<4){return;}
-		_.resetMusic(index);
+		//_.resetMusic(index);
+		if(typeof(music.currentTime) !='undefined'){
+			music.currentTime=0;
+			alert(111);
+		}
 		typeof(music.play)=='function' && music.play();
 		if(index==4){
 			if(!!music.paused){
@@ -250,11 +253,8 @@ $Tencent=window.$Tencent || {
 	resetMusic:function(index){
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
-
 		if(typeof(music.currentTime) !='undefined'){
-			alert(music.currentTime);
 			music.currentTime=0;
-			alert(music.currentTime);
 		}
 	},
 	autoWave:function($obj,during,cstep,dx,beback){
