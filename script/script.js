@@ -1,8 +1,8 @@
 var dataForWeixin={
     appId:'',
-    MsgImg:'',
-    TLImg:'../images/shareto.jpg',
-    link:'',
+    MsgImg:'http://wow0218.github.io/qvideo/images/shareto.jpg',
+    TLImg:'http://wow0218.github.io/qvideo/images/shareto.jpg',
+    link:'http://wow0218.github.io/qvideo/',
     title:'来《hi歌》，对新的自己Say Hi',
     desc:'',
     callback:function(){
@@ -832,13 +832,14 @@ $Tencent=window.$Tencent || {
 			$("#logo").fadeOut(200);
 			_.clearTimer($("#pagesign"));
 			$("#pagesign").fadeOut(200);
-			_.pauseMusic(4);
-			_.resetMusic(4);
 			$("#btn_sound").fadeOut(200);
 		});
 		$("#page_6").bind("pageOut",function(e,beback){
 			var $page=$(this);
+
 			$page.stop().animate({"opacity":0},300,function(){
+				_.pauseMusic(4);
+				_.resetMusic(4);
 				$(this).css({"display":"none"});
 			});
 		});
