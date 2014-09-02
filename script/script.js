@@ -421,7 +421,6 @@ $Tencent=window.$Tencent || {
 	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},500);
 	    	$("#homepage").find(".txt2").stop().animate({"opacity":0,"margin-top":-177},500);
 	    	$("#homepage").find(".txt3").stop().animate({"opacity":0,"margin-top":-136},500);
-	    	//_.playMusic(4);
 	    	$("#guang").fadeIn(1000);
 	    	$("#btn_sound").fadeIn(200);
 	    	_.config.timeId.homepage[3]=setTimeout(function(){
