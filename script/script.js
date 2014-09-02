@@ -221,11 +221,14 @@ $Tencent=window.$Tencent || {
 		}
 	},
 	playMusic:function (index){
-		alert(111);
 		var mId=["M1","M2","M3","M4","BGM"];
 		var music=document.getElementById(mId[index]);
 		if($("#homepage").hasClass("belight") && index<4){return;}
-		music.currentTime=0;
+		alert(!!music);
+		alert(typeof(music.currentTime));
+		// if(!!music && typeof(music.currentTime) !="undefined"){
+		// 	music.currentTime=0;
+		// }
 		typeof(music.play)=='function' && music.play();
 		if(index==4){
 			if(!!music.paused){
