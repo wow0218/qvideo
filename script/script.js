@@ -380,7 +380,7 @@ $Tencent=window.$Tencent || {
 	    	$("#btn_sound").fadeIn(200);
 	    	_.config.timeId.homepage[3]=setTimeout(function(){
 	    		_.mainPageSlider(null,1);
-	    	},1000);
+	    	},1500);
 	    },during);
 	    return _;
 	},
@@ -609,7 +609,7 @@ $Tencent=window.$Tencent || {
 				clearTimeout(_.config.timeId.page_1[i]);
 			}
 			$page.find(".pic1,.music5,.music4,.music3,.music2,.music1,.txt1,.color,.colorbg")
-				.animate({"margin-top":-420,"opacity":0},1000,function(){
+				.animate({"margin-top":-420,"opacity":0},600,function(){
 					$(this).css({"display":"none"});
 					$page.css({"display":"none"});
 				});
