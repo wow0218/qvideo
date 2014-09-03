@@ -857,8 +857,6 @@ $Tencent=window.$Tencent || {
 			var $page=$(this);
 
 			$page.stop().animate({"opacity":0},300,function(){
-				_.pauseMusic(4);
-				_.resetMusic(4);
 				$(this).css({"display":"none"});
 			});
 		});
