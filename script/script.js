@@ -534,7 +534,7 @@ $Tencent=window.$Tencent || {
 				var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
 	            	endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
 	            var thisId=this.getAttribute("id");
-	            if(thisId=="homepage" || thisId=="page_6" || !!_.config.pages.bemove){_.config.pages.bemove=false;return;}
+	            if(thisId=="homepage" || !!_.config.pages.bemove){_.config.pages.bemove=false;return;}
 	            _.config.pages.bemove=true;
 	            var during=10;
 	            var cur=$(".page").index($(".page.cur"));
