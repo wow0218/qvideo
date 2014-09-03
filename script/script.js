@@ -348,7 +348,7 @@ $Tencent=window.$Tencent || {
         var cvs=document.getElementById("jitaxian");
         var index=Math.floor(Math.random()*5);
         _.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;//0;//Math.floor(Math.random()*4);
-        var mIndex=_.config.homepage.playtimes-1;
+        var mIndex= (_.config.homepage.playtimes-1)%4;
         var endX=!!e.changedTouches ? e.changedTouches[0].pageX:e.pageX,
             endY=!!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
         if(endX-_.config.homepage.startX>=75){ //向右滑动
@@ -418,6 +418,7 @@ $Tencent=window.$Tencent || {
     	_.config.timeId.homepage[2]=setTimeout(function(){
 	    	//进入下一页
 	    	$("#homepage").addClass("belight");
+	    	_.playMusic(4);
 	    	_.clearTimer($("#homepage").find(".txt3"));
 	    	$("#homepage").find(".txt1").stop().animate({"opacity":0,"margin-top":-220},500);
 	    	$("#homepage").find(".txt2").stop().animate({"opacity":0,"margin-top":-177},500);
