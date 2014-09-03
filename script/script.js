@@ -855,7 +855,7 @@ $Tencent=window.$Tencent || {
 			//显示 LOGO 翻页
 			$("#logo").fadeOut(200);
 			_.clearTimer($("#pagesign"));
-			$("#pagesign").fadeOut(200);
+			$("#pagesign").fadeOut(50);
 			//$("#btn_sound").fadeOut(100);
 		});
 		$("#page_6").bind("pageOut",function(e,beback){
