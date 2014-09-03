@@ -411,8 +411,8 @@ $Tencent=window.$Tencent || {
 		clearTimeout(_.config.timeId.homepage[2]);
 	    //_.config.homepage.playtimes = (_.config.homepage.playtimes || 0) +1;
 	    var during=3200;
-	    if(_.config.homepage.playtimes>=4){
-	    	during=500;
+	    if(_.config.homepage.playtimes>4){
+	    	during=800;
         	_.playMusic(4);
 	    }
     	_.config.timeId.homepage[2]=setTimeout(function(){
