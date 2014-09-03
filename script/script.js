@@ -825,6 +825,11 @@ $Tencent=window.$Tencent || {
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
 			},600);
+
+			//显示 LOGO 翻页
+			$("#logo").fadeIn(300);
+			_.huxiAnimate($("#pagesign"),0.2,1);
+			//$("#btn_sound").fadeIn(300);
 		});
 		$("#page_5").bind("pageOut",function(e,beback){
 			var $page=$(this);
@@ -851,7 +856,7 @@ $Tencent=window.$Tencent || {
 			$("#logo").fadeOut(200);
 			_.clearTimer($("#pagesign"));
 			$("#pagesign").fadeOut(200);
-			$("#btn_sound").fadeOut(100);
+			//$("#btn_sound").fadeOut(100);
 		});
 		$("#page_6").bind("pageOut",function(e,beback){
 			var $page=$(this);
