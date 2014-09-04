@@ -760,13 +760,13 @@ $Tencent=window.$Tencent || {
 			_.config.timeId.page_4[1]=setTimeout(function(){
 				$page.find(".pic2").css({'display':'block','opacity':1,'scale':0,'margin-top':33})
 					.transition({'scale':1},350,"easeOutQuart");
-				$page.find(".txt3").css({'display':'block','opacity':0,'scale':5,'margin-top':-272})
+				$page.find(".txt2").css({'display':'block','opacity':0,'scale':5,'margin-top':-350})
 					.transition({'scale':1,'opacity':1},550,"easeOutQuart");
 			},800);
 			_.config.timeId.page_4[2]=setTimeout(function(){
 				$page.find(".pic3").css({'display':'block','opacity':1,'scale':0,'margin-top':280})
 					.transition({'scale':1},350,"easeOutQuart");
-				$page.find(".txt2").css({'display':'block','opacity':0,'scale':5,'margin-top':-350})
+				$page.find(".txt3").css({'display':'block','opacity':0,'scale':5,'margin-top':-272})
 					.transition({'scale':1,'opacity':1},550,"easeOutQuart");
 			},1000);
 			_.config.timeId.page_4[3]=setTimeout(function(){
