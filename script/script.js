@@ -659,7 +659,7 @@ $Tencent=window.$Tencent || {
 					});
 				$page.find(".txtbg").stop().css({'display':'block','margin-top':-353,'opacity':0})
 					.animate({"opacity":1},500,function(){
-						$page.find(".txt1").css({'display':'block','margin-top':-369,'rotate3d':'0,1,0.1,30deg','opacity':0})
+						$page.find(".txt1").css({'display':'block','margin-top':-344,'rotate3d':'0,1,0.1,30deg','opacity':0})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
 			},600);
@@ -751,7 +751,7 @@ $Tencent=window.$Tencent || {
 					});
 				$page.find(".txtbg").stop().css({'display':'block','margin-top':-339,'opacity':0})
 					.animate({"opacity":1},500,function(){
-						$page.find(".txt1").css({'display':'block','margin-top':-310,'rotate3d':'0,1,0.1,30deg','opacity':0})
+						$page.find(".txt1").css({'display':'block','margin-top':-210,'rotate3d':'0,1,0.1,30deg','opacity':0})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
 				$page.find(".pic1").css({'display':'block','opacity':1,'scale':0,'margin-top':10})
@@ -760,10 +760,14 @@ $Tencent=window.$Tencent || {
 			_.config.timeId.page_4[1]=setTimeout(function(){
 				$page.find(".pic2").css({'display':'block','opacity':1,'scale':0,'margin-top':33})
 					.transition({'scale':1},350,"easeOutQuart");
+				$page.find(".txt3").css({'display':'block','opacity':0,'scale':5,'margin-top':-272})
+					.transition({'scale':1,'opacity':1},550,"easeOutQuart");
 			},800);
 			_.config.timeId.page_4[2]=setTimeout(function(){
 				$page.find(".pic3").css({'display':'block','opacity':1,'scale':0,'margin-top':280})
 					.transition({'scale':1},350,"easeOutQuart");
+				$page.find(".txt2").css({'display':'block','opacity':0,'scale':5,'margin-top':-350})
+					.transition({'scale':1,'opacity':1},550,"easeOutQuart");
 			},1000);
 			_.config.timeId.page_4[3]=setTimeout(function(){
 				$page.find(".pic4").css({'display':'block','opacity':1,'scale':0,'margin-top':81})
@@ -776,7 +780,7 @@ $Tencent=window.$Tencent || {
 			for(var i=0;i<_.config.timeId.page_4.length;i++){
 				clearTimeout(_.config.timeId.page_4[i]);
 			}
-			$page.find(".txtbg,.txt1").stop().animate({"opacity":0},350,function(){
+			$page.find(".txtbg,.txt1,.txt2,.txt3").stop().animate({"opacity":0},350,function(){
 				$(this).css({"display":"none"});
 			});
 			$page.find(".music1,.music2,.music3,.music4,.color,.colorbg,.pic1,.pic2,.pic3,.pic4").stop()
