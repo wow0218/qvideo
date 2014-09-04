@@ -825,7 +825,7 @@ $Tencent=window.$Tencent || {
 					});
 				$page.find(".txtbg").stop().css({'display':'block','margin-top':-307,'opacity':0})
 					.animate({"opacity":1},580,function(){
-						$page.find(".txt1").css({'display':'block','rotate3d':'0,1,0.1,30deg','opacity':0,'margin-top':-330})
+						$page.find(".txt1").css({'display':'block','rotate3d':'0,1,0.1,30deg','opacity':0,'margin-top':-345})
 							.transition({"rotate3d":"0,1,0,0deg",'opacity':1},800,"easeOutBack");
 					});
 			},600);
