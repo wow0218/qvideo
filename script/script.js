@@ -1,3 +1,9 @@
+var ua 		=	navigator.userAgent,
+	android = 	ua.match(/(Android);?[\s\/]+([\d.]+)?/),
+	ipad 	= 	ua.match(/(iPad).*OS\s([\d_]+)/),
+	ipod 	= 	ua.match(/(iPod)(.*OS\s([\d_]+))?/),
+	iphone 	= 	!ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
+
 var dataForWeixin={
     appId:'',
     MsgImg:'http://wow0218.github.io/qvideo/images/shareto.jpg',
@@ -477,6 +483,31 @@ $Tencent=window.$Tencent || {
 			},during));
 		}
 	},
+	playEndVideo:function(){
+		var _=this;
+		var video=document.getElementById("tenvideo");
+		var mask=document.getElementById("videomask");
+		// if(ipad || ipod || iphone){
+		// }else{
+			mask.style["left"]="0%";
+			video.controls=true;
+		// }
+		typeof(video.play)=='function' && video.play();
+		//停止背景音乐
+		_.pauseMusic(4);
+	},
+	closeEndVideo:function(){
+		var _=this;
+		var video=document.getElementById("tenvideo");
+		var mask=document.getElementById("videomask");
+		// if(ipad || ipod || iphone){
+		// }else{
+			mask.style["left"]="-200%";
+			video.controls=false;
+		// }
+		//开始背景音乐
+		_.playMusic(4);
+	},
 	eventInit:function(){
 		var _=this;
 		document.addEventListener('touchmove', function (e) { 
@@ -554,6 +585,16 @@ $Tencent=window.$Tencent || {
 	            },during);
 			},false);
 		}
+
+		//视频播放
+		$("#page_6 .btn_play").bind("click",function(e){
+			_.playEndVideo();
+		});
+		//视频结束
+		document.getElementById("tenvideo").addEventListener("ended",function(e){
+			e= e || window.event;
+			_.closeEndVideo();
+		},false);
 		return _;
 	},
 	pageEventInit:function(){
@@ -854,7 +895,15 @@ $Tencent=window.$Tencent || {
 		$("#page_6").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.stop().css({"display":"block","x":"0%","y":"0%","opacity":0})
-				.animate({"opacity":1},500);
+				.animate({"opacity":1},300,function(){
+					$page.find(".pic1").stop().css({"display":"block","opacity":0,"margin-top":0})
+						.animate({"opacity":1,"margin-top":-140},500);
+					$page.find(".txt1").stop().css({"display":"block","opacity":0,"margin-top":0})
+						.animate({"opacity":1,"margin-top":-250},600);
+					$page.find(".btn_play").stop().css({"display":"block","opacity":0})
+						.animate({"opacity":1},300);
+				});
+
 			//Logo
 			//显示 LOGO 翻页
 			$("#logo").fadeOut(200);
@@ -864,9 +913,11 @@ $Tencent=window.$Tencent || {
 		});
 		$("#page_6").bind("pageOut",function(e,beback){
 			var $page=$(this);
-
-			$page.stop().animate({"opacity":0},300,function(){
-				$(this).css({"display":"none"});
+			$page.find(".btn_play").stop().animate({"opacity":0},300);
+			$page.find(".pic1,.txt1").stop().animate({"opacity":0,"margin-top":-350},500,function(){
+				$page.stop().animate({"opacity":0},200,function(){
+					$(this).css({"display":"none"});
+				});
 			});
 		});
 		return _;
