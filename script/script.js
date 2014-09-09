@@ -592,8 +592,8 @@ $Tencent=window.$Tencent || {
 		$("#page_6 .btn_play").bind("click",function(e){
 			_.playEndVideo();
 		});
-		$("#mask").bind("click",function(e){
-
+		$("#videomask .btn_close").bind("click",function(e){
+			_.closeEndVideo();
 		});
 		//视频结束
 		document.getElementById("tenvideo").addEventListener("ended",function(e){
