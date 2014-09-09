@@ -487,11 +487,11 @@ $Tencent=window.$Tencent || {
 		var _=this;
 		var video=document.getElementById("tenvideo");
 		var mask=document.getElementById("videomask");
-		// if(ipad || ipod || iphone){
-		// }else{
+		if(ipad || ipod || iphone){
+		}else{
 			mask.style["left"]="0%";
 			video.controls=true;
-		// }
+		}
 		typeof(video.play)=='function' && video.play();
 		//停止背景音乐
 		_.pauseMusic(4);
@@ -500,6 +500,8 @@ $Tencent=window.$Tencent || {
 		var _=this;
 		var video=document.getElementById("tenvideo");
 		var mask=document.getElementById("videomask");
+
+		typeof(video.pause)=='function' && video.pause();
 		// if(ipad || ipod || iphone){
 		// }else{
 			mask.style["left"]="-200%";
@@ -589,6 +591,9 @@ $Tencent=window.$Tencent || {
 		//视频播放
 		$("#page_6 .btn_play").bind("click",function(e){
 			_.playEndVideo();
+		});
+		$("#mask").bind("click",function(e){
+
 		});
 		//视频结束
 		document.getElementById("tenvideo").addEventListener("ended",function(e){
