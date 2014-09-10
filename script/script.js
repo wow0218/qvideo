@@ -483,10 +483,7 @@ $Tencent=window.$Tencent || {
 			},during));
 		}
 	},
-	playEndVideo:function(){
-		var _=this;
-		var video=document.getElementById("tenvideo");
-		var mask=document.getElementById("videomask");
+	videoControl:function(video,mask){
 		if(ipad || ipod || iphone){
 		}else{
 			mask.style["left"]="0%";
@@ -495,6 +492,18 @@ $Tencent=window.$Tencent || {
 		typeof(video.play)=='function' && video.play();
 		//停止背景音乐
 		_.pauseMusic(4);
+	},
+	playEndVideo:function(){
+		var _=this;
+		var video=document.getElementById("tenvideo");
+		var mask=document.getElementById("videomask");
+		if(video.src){
+			_.videoControl(video,mask);
+		}else{
+			_.getVideo(function(){
+				_.videoControl(video,mask);
+			});
+		}
 	},
 	closeEndVideo:function(){
 		var _=this;
@@ -509,6 +518,21 @@ $Tencent=window.$Tencent || {
 		// }
 		//开始背景音乐
 		_.playMusic(4);
+	},
+	getVideo:function(callback){
+		window.QZOutputJson=null;
+		$.ajax({
+			url:"http://vv.video.qq.com/geturl?otype=json&vid=z01365chtn0",
+			dataType:"jsonp",
+			type:"GET",
+			success:function(r){
+				if(!!r && !!r.vd && !!r.vd.vi && !!r.vd.vi[0]){
+					var url=r.vd.vi[0]["url"];
+					document.getElementById("tenvideo").src=( url || "assets/yugao.mp4");
+					typeof(callback)=='function' && callback();
+				}
+			}
+		});
 	},
 	eventInit:function(){
 		var _=this;
@@ -587,7 +611,8 @@ $Tencent=window.$Tencent || {
 	            },during);
 			},false);
 		}
-
+		//写入视频连接
+		_.getVideo();
 		//视频播放
 		$("#page_6 .btn_play").bind("click",function(e){
 			_.playEndVideo();
