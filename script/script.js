@@ -484,6 +484,7 @@ $Tencent=window.$Tencent || {
 		}
 	},
 	videoControl:function(video,mask){
+		var _=this;
 		if(ipad || ipod || iphone){
 		}else{
 			mask.style["left"]="0%";
