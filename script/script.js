@@ -543,6 +543,9 @@ $Tencent=window.$Tencent || {
 			// 	_.stopmove=false;
 			// }
 		},false);
+		//禁止弹出选择菜单
+		document.documentElement.style.webkitTouchCallout = "none";
+		
 		document.getElementById("homepage").addEventListener("ontouchmove" in document ? "touchmove" : "mousemove",function(e){
 			//_.stopmove=true;
 		},false);
@@ -586,6 +589,10 @@ $Tencent=window.$Tencent || {
 				e = e || window.event;
 		        _.config.pages.curX= !!e.changedTouches ? e.changedTouches[0].pageX:e.pageX;
 		        _.config.pages.curY= !!e.changedTouches ? e.changedTouches[0].pageY:e.pageY;
+		        //拖动页面
+		        // var dx=(_.config.pages.curX-_.config.pages.startX)/window.innerWidth * 100;
+		        // var dy=(_.config.pages.curY-_.config.pages.startY)/window.innerHeight * 100;
+		        // $(this).trigger('holdSlider',{"dx":dx,"dy":dy});
 			},false);
 			_pages[i].addEventListener("ontouchend" in document ? "touchend" : "mouseup",function(e){
 				e = e || window.event;
@@ -630,6 +637,26 @@ $Tencent=window.$Tencent || {
 	},
 	pageEventInit:function(){
 		var _=this;
+		// 拖页面的处理
+		// $(".page").bind("holdSlider",function(e,depo){
+		// 	var dy=depo.dy || 0;
+		// 	var $page=$(".page");
+		// 	var c=$(".page").index(this);
+		// 	var _s=$(".page").size();
+		// 	var t=c;
+		// 	var _top=0;
+		// 	if(dy>0){
+		// 		t=c-1 <0 ? 0 : c-1;
+		// 		_top=-100;
+		// 	}else if(dy<0){
+		// 		t= c+1 >=_s ? _s-1 :c+1;
+		// 		_top=100;
+		// 	}
+		// 	$(this).css({"y":dy+"%"});
+		// 	if(c!=t){
+		// 		$page.eq(t).css({"display":"block","x":"0%","y":(_top+dy)+"%"});
+		// 	}
+		// });
 		$("#homepage").bind("pageIn",function(e,beback){
 			var $page=$(this);
 			$page.css({"display":"block","x":"0%","y":"0%"});
